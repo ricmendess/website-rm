@@ -1,0 +1,358 @@
+---
+description: Ajuda na execução e continuidade de tasks a partir de um task list.
+globs: 
+alwaysApply: false
+---
+# 🛠️ Regras para Assistente IA - Desenvolvedor
+
+## 📋 Visão Geral
+
+Estas regras orientam a implementação técnica de **features** através de **task lists** estruturadas, garantindo desenvolvimento organizado e rastreável.
+
+## 🏗️ Estrutura de Arquivos
+
+### 📁 Organização
+- **Pasta base**: `docs/ai/features/`
+- **Estrutura por feature**: `docs/ai/features/{feature-slug}/`
+  - `prd.md` - Product Requirements Document (somente leitura)
+  - `task-list.md` - Lista de tarefas técnicas (gerenciamento ativo)
+
+### 🏷️ Nomenclatura de Tasks
+- Use **IDs sequenciais**: `T001`, `T002`, `T003`
+- Descrições claras e específicas
+- Cada task = 1-3 alterações de código relacionadas
+
+## 📝 Processo de Desenvolvimento
+
+### 1️⃣ Inicialização
+Antes de começar uma feature:
+
+1. **Leia o PRD completo** para entender contexto
+2. **Verifique se task-list.md existe**, senão crie
+3. **Revise dependências** e requisitos técnicos
+4. **Confirme entendimento** antes de prosseguir
+
+### 2️⃣ Template da Task List
+
+```markdown
+# 🛠️ Task List: [Nome da Feature]
+
+## 📊 Status Geral
+
+**Feature**: [Nome da feature]
+**Status**: Em Desenvolvimento
+**Início**: [Data]
+**Desenvolvedor**: [Nome]
+**Épico Jira**: [Link do épico]
+
+## 📋 Tasks
+
+### 🟡 T001: [Descrição da task]
+**Status**: `todo`
+**Estimativa**: [tempo]
+**Dependências**: Nenhuma
+
+**Detalhes**:
+- [Descrição específica do que implementar]
+- [Arquivos que serão modificados]
+- [Considerações técnicas]
+
+**Checklist**:
+- [ ] [Item específico 1]
+- [ ] [Item específico 2]
+- [ ] [Testes implementados]
+
+---
+
+### 🟡 T002: [Descrição da task]
+**Status**: `todo`
+**Estimativa**: [tempo]
+**Dependências**: T001
+
+**Detalhes**:
+- [Descrição específica]
+- [Arquivos relacionados]
+
+**Checklist**:
+- [ ] [Item 1]
+- [ ] [Item 2]
+
+---
+
+### 🔵 T003: [Checkpoint - Revisão Intermediária]
+**Status**: `todo`
+**Tipo**: `checkpoint`
+**Dependências**: T002
+
+**Objetivo**: Validar implementação até aqui antes de prosseguir
+
+**Critérios**:
+- [ ] T001 e T002 completamente finalizadas
+- [ ] Testes passando
+- [ ] Code review se necessário
+- [ ] Validação com PO/Tech Lead
+
+---
+
+## 📊 Status das Tasks
+
+| ID   | Descrição           | Status     | Responsável | Conclusão |
+|------|---------------------|------------|-------------|-----------|
+| T001 | [Descrição curta]   | todo       | [Nome]      | -         |
+| T002 | [Descrição curta]   | todo       | [Nome]      | -         |
+| T003 | [Checkpoint]        | todo       | [Nome]      | -         |
+
+## 📈 Progresso
+
+- **Total de tasks**: 3
+- **Concluídas**: 0
+- **Em andamento**: 0
+- **Pendentes**: 3
+- **Progresso**: 0%
+
+## 📝 Log de Desenvolvimento
+
+### [Data] - Início do desenvolvimento
+- Task list criada
+- PRD revisado
+- Dependências verificadas
+
+---
+
+**Criado em**: [Data]
+**Última atualização**: [Data]
+```
+
+### 3️⃣ Status das Tasks
+
+Use **exatamente** estes status:
+
+- 🟡 **`todo`**: Task pendente, não iniciada
+- 🔵 **`doing`**: Task em andamento no momento
+- ⚠️ **`blocked`**: Task bloqueada por dependência externa
+- ⏭️ **`skip`**: Task ignorada temporariamente (justificar)
+- ✅ **`done`**: Task completamente finalizada
+
+### 4️⃣ Tipos Especiais de Tasks
+
+#### 🔵 Checkpoints
+- **Tipo**: `checkpoint`
+- **Propósito**: Pausa obrigatória para validação
+- **Quando usar**: A cada 3-5 tasks ou em marcos importantes
+- **Ação**: Pare e solicite revisão antes de prosseguir
+
+#### 🧪 Tasks de Teste
+- **Tipo**: `testing`
+- **Propósito**: Implementação de testes específicos
+- **Escopo**: Testes unitários, integração, E2E
+- **Critério**: Cobertura adequada para a funcionalidade
+
+## 🚀 Fluxo de Execução
+
+### 📋 Regras de Execução
+
+1. **Execução sequencial**: Tasks devem ser feitas em ordem
+2. **Uma task por vez**: Marque como `doing` apenas uma task
+3. **Dependências**: Não inicie task que depende de outra incompleta
+4. **Checkpoints**: Pare obrigatoriamente em checkpoints
+5. **Atualizações**: Mantenha status sempre atualizado
+
+### 🔄 Ciclo de uma Task
+
+1. **Início**: Mude status para `doing`
+2. **Desenvolvimento**: Implemente conforme especificado
+3. **Testes**: Execute/implemente testes relacionados
+4. **Checklist**: Complete todos os itens do checklist
+5. **Finalização**: Mude status para `done` e atualize timestamp
+6. **Log**: Adicione entrada no log com resumo do que foi feito
+
+### ⚠️ Tratamento de Problemas
+
+#### Task Bloqueada
+```markdown
+### ⚠️ T005: [Descrição]
+**Status**: `blocked`
+**Bloqueado por**: [Descrição do impedimento]
+**Ação necessária**: [O que precisa ser resolvido]
+**Responsável**: [Quem pode resolver]
+```
+
+#### Task Ignorada
+```markdown
+### ⏭️ T007: [Descrição]
+**Status**: `skip`
+**Justificativa**: [Por que foi ignorada]
+**Revisitar em**: [Quando reavaliar]
+```
+
+## 🔗 Integração com Jira
+
+### 📋 Criação de Stories/Tasks
+Para cada task do task-list, **pode ser necessário** criar tickets Jira:
+
+1. **Verifique** se MCP Jira está disponível
+2. **Crie tickets** para tasks que representam entregas significativas
+3. **Linke** ao épico da feature
+4. **Use template** adequado para descrição
+
+#### Template para Story/Task Jira
+```
+h3. 📋 [Descrição da Task]
+
+h4. 🎯 Objetivo
+[O que esta task deve implementar]
+
+h4. 🔧 Detalhes Técnicos
+* *Arquivos principais*: [Lista de arquivos]
+* *Tipo de mudança*: [Frontend/Backend/Full-stack]
+* *Dependências*: [Outras tasks ou sistemas]
+
+h4. ✅ Critérios de Aceitação
+- [x] [Critério 1]
+- [x] [Critério 2]
+- [x] [Testes implementados]
+
+h4. 📝 Checklist Técnico
+- [x] [Item técnico 1]
+- [x] [Item técnico 2]
+- [x] [Code review realizado]
+
+h4. 📚 Referências
+* PRD: docs/ai/features/[feature-slug]/prd.md
+* Task List: docs/ai/features/[feature-slug]/task-list.md
+
+---
+*Task ID: [ID da task]*
+*Epic*: [Link do épico]
+```
+
+## ⚠️ Regras Importantes
+
+### ❌ Não Fazer
+- **NÃO** trabalhe fora da sequência de tasks
+- **NÃO** pule checkpoints sem aprovação
+- **NÃO** implemente funcionalidades fora do escopo do PRD
+- **NÃO** deixe de atualizar status das tasks
+- **NÃO** faça commits sem relacionar à task específica
+
+### ✅ Sempre Fazer
+- **SEMPRE** leia o PRD antes de iniciar
+- **SEMPRE** mantenha task list atualizada
+- **SEMPRE** implemente testes para funcionalidades
+- **SEMPRE** documente decisões técnicas importantes
+- **SEMPRE** pare em checkpoints para validação
+
+### 🔧 Commits e Versionamento
+
+#### Formato de Commit
+```
+[T001] feat: implementa autenticação de usuário
+
+- Adiciona endpoint de login
+- Implementa validação de JWT
+- Cria middleware de autenticação
+```
+
+#### Padrão de Branch
+```
+feature/[feature-slug]
+feature/user-authentication
+feature/payment-integration
+```
+
+## 📊 Monitoramento de Progresso
+
+### 🔄 Atualizações Obrigatórias
+
+1. **Início de task**: Atualizar status para `doing`
+2. **Fim de task**: Atualizar status para `done` + timestamp
+3. **Progresso geral**: Recalcular percentual de conclusão
+4. **Log de desenvolvimento**: Adicionar entrada com resumo
+
+### 📈 Template de Atualização de Progresso
+```markdown
+## 📈 Progresso
+- **Total de tasks**: [número]
+- **Concluídas**: [número]
+- **Em andamento**: [número]  
+- **Pendentes**: [número]
+- **Bloqueadas**: [número]
+- **Progresso**: [percentual]%
+
+**Última atualização**: [timestamp]
+```
+
+## 🧪 Testes e Qualidade
+
+### 📋 Critérios de Qualidade
+Toda task deve atender:
+
+- **Funcionalidade**: Implementa exatamente o especificado
+- **Testes**: Possui testes adequados (unitários/integração)
+- **Documentação**: Código comentado quando necessário
+- **Performance**: Não introduz degradação significativa
+- **Segurança**: Segue padrões de segurança estabelecidos
+
+### 🧪 Estratégia de Testes
+- **Unitários**: Para lógica de negócio e utilitários
+- **Integração**: Para APIs e integrações
+- **E2E**: Para fluxos críticos de usuário
+- **Performance**: Para funcionalidades críticas
+
+## 📞 Comunicação
+
+### 🗣️ Linguagem com Tech Lead/PO
+- Use linguagem técnica apropriada mas clara
+- Explique trade-offs e decisões arquiteturais
+- Solicite clarificações sobre requisitos ambíguos
+- Reporte problemas e bloqueios rapidamente
+
+### 📋 Checkpoints Obrigatórios
+- **Antes de iniciar**: Revisar PRD e dependências
+- **Em checkpoints**: Validar progresso e qualidade
+- **Bloqueios**: Comunicar imediatamente
+- **Conclusão**: Confirmar que atende todos os critérios
+
+## 🚀 Finalização da Feature
+
+### ✅ Critérios de Conclusão
+Antes de marcar feature como completa:
+
+1. **Todas as tasks** marcadas como `done`
+2. **Testes passando** em todos os ambientes
+3. **Code review** completo (se aplicável)
+4. **Documentação** atualizada
+5. **Performance** validada
+6. **Deploy** realizado com sucesso
+
+### 📋 Checklist Final
+```markdown
+## ✅ Checklist de Conclusão
+
+### Desenvolvimento
+- [ ] Todas as tasks implementadas
+- [ ] Código revisado e aprovado
+- [ ] Testes implementados e passando
+- [ ] Documentação atualizada
+
+### Deploy
+- [ ] Deploy em ambiente de teste
+- [ ] Validação em ambiente de produção
+- [ ] Rollback plan definido
+
+### Validação
+- [ ] Critérios de aceitação validados
+- [ ] Performance adequada
+- [ ] Segurança validada
+- [ ] UX/UI aprovada
+
+### Documentação
+- [ ] PRD atualizado se necessário
+- [ ] Task list finalizada
+- [ ] Tickets Jira atualizados
+- [ ] Conhecimento transferido
+```
+
+---
+
+*Estas regras garantem desenvolvimento estruturado, rastreável e de alta qualidade através de execução disciplinada de task lists.* 

@@ -1,0 +1,162 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Rule: Guia Completo para Product Managers - Criação de PRDs com IA
+
+## Objetivo
+
+Guiar Product Managers brasileiros na criação eficiente de Product Requirement Documents (PRD) utilizando assistentes de IA no ambiente Cursor, estabelecendo um processo estruturado que resulte em PRDs claros, acionáveis e tecnicamente viáveis.
+
+## Contexto
+
+Este comando deve ser usado quando um PM quer criar um PRD completo usando IA, seguindo as melhores práticas e um processo validado. O assistente deve atuar como um PM sênior experiente que guia o usuário através de todas as etapas.
+
+## Processo
+
+### Fase 1: Validação da Preparação
+1. **Antes de iniciar o PRD**, pergunte ao PM se ele tem:
+   - Problema claramente definido (qual dor, para quem, impacto)
+   - Contexto de negócio (objetivos estratégicos, métricas esperadas, restrições)
+   - Research básico (benchmarks, feedback de usuários, limitações técnicas)
+
+2. **Se algum item estiver faltando**, oriente sobre como completar antes de prosseguir.
+
+### Fase 2: Coleta de Informações Estruturada
+3. **Solicite o prompt inicial estruturado**:
+   ```
+   Descrição da feature: [DESCRIÇÃO DETALHADA]
+   
+   Contexto adicional:
+   - Problema específico: [PROBLEMA]
+   - Usuário-alvo: [PERSONA/SEGMENTO]
+   - Objetivo de negócio: [MÉTRICA/OBJETIVO]
+   - Restrições conhecidas: [LIMITAÇÕES]
+   - Arquivos de referência: [OPCIONAL: arquivos relevantes]
+   ```
+
+4. **Faça perguntas clarificadoras estratégicas** (adapte conforme o contexto):
+   - "Qual é o problema específico que isso resolve para o usuário final?"
+   - "Quem é o usuário primário? Existe usuário secundário?"
+   - "Quais são as 3-5 ações principais que o usuário deve conseguir realizar?"
+   - "Como vamos medir o sucesso desta feature? Quais métricas específicas?"
+   - "O que definitivamente NÃO faz parte do escopo desta primeira versão?"
+   - "Existem dependências técnicas ou de outras equipes que devemos considerar?"
+   - "Há alguma restrição de timeline ou orçamento importante?"
+   - "Qual é o comportamento esperado em cenários de erro ou edge cases?"
+
+### Fase 3: Geração do PRD
+5. **Gere o PRD** seguindo exatamente esta estrutura:
+
+   ```markdown
+   # PRD: [Nome da Feature]
+   
+   ## 1. Introdução/Visão Geral
+   [Resumo executivo em 2-3 parágrafos]
+   [Problema que resolve]
+   [Impacto esperado]
+   
+   ## 2. Objetivos
+   [3-5 objetivos específicos e mensuráveis no formato SMART]
+   
+   ## 3. User Stories
+   [5-7 histórias no formato: "Como [tipo de usuário], eu quero [ação] para que [benefício]"]
+   [Inclua cenários de edge cases]
+   
+   ## 4. Requisitos Funcionais
+   [Lista numerada e específica]
+   [Linguagem clara: "O sistema DEVE..." / "O usuário PODE..."]
+   
+   ## 5. Não-Objetivos (Fora do Escopo)
+   [Lista explícita do que NÃO será incluído]
+   
+   ## 6. Métricas de Sucesso
+   [KPIs quantitativos específicos com timeline]
+   [Baseline atual se aplicável]
+   
+   ## 7. Questões em Aberto
+   [Pontos que precisam definição adicional]
+   [Dependências externas]
+   [Riscos identificados]
+   
+   ## 8. Considerações de Design (Opcional)
+   [Links para mockups/wireframes se aplicável]
+   [Guidelines de UI/UX]
+   
+   ## 9. Considerações Técnicas (Opcional)
+   [Dependências conhecidas]
+   [Integrações necessárias]
+   [Limitações de performance]
+   
+   ```
+
+6. **Salve o PRD** como `prd-[nome-da-feature].md` no diretório `/docs/tasks/`
+
+### Fase 4: Validação e Refinamento
+7. **Após gerar o PRD**, oriente o PM sobre:
+   - Necessidade de review técnico com tech lead
+   - Validação com stakeholders de negócio
+   - Review de UX se aplicável
+   - Checklist de qualidade a seguir
+
+8. **Forneça checklist de validação**:
+   ```
+   ✅ Conteúdo:
+   - [ ] Problema claramente definido
+   - [ ] User stories priorizadas e específicas
+   - [ ] Requisitos funcionais numerados e não ambíguos
+   - [ ] Métricas de sucesso mensuráveis
+   - [ ] Não-objetivos explícitos
+   
+   ✅ Qualidade:
+   - [ ] Linguagem clara para dev júnior
+   - [ ] Escopo bem definido e factível
+   - [ ] Dependências mapeadas
+   ```
+
+## Guias de qualidade
+
+### Para Requisitos Funcionais:
+- Use linguagem imperativa: "O sistema DEVE", "O usuário PODE"
+- Seja específico: incluir formatos, limites, validações
+- Numere todos os requisitos
+- Máximo 15 requisitos (se mais, sugira quebrar em fases)
+
+### Para User Stories:
+- Formato obrigatório: "Como [usuário], eu quero [ação] para que [benefício]"
+- Priorize por valor de negócio
+- Inclua pelo menos 1 edge case
+- Máximo 7 histórias principais
+
+### Para Métricas:
+- Sempre quantitativas e mensuráveis
+- Inclua baseline atual quando possível
+- Defina timeline para medição
+- Exemplo: "Aumentar conversão de 2.5% para 4% em 3 meses"
+
+### Red Flags - Quando orientar refazimento:
+- Requisitos funcionais vagos ou ambíguos
+- Objetivos não mensuráveis
+- Falta de user stories claras
+- Não-objetivos vazios
+- Mais de 15 requisitos funcionais
+
+## Tom e Linguagem
+- **Sempre em português brasileiro**
+- Atue como PM sênior experiente e colaborativo
+- Seja didático mas não condescendente
+- Foque em perguntas que extraiam clareza e especificidade
+- Use exemplos práticos quando necessário
+
+## Instruções finais
+
+1. **NÃO comece gerando o PRD imediatamente**
+2. **SEMPRE valide a preparação primeiro**
+3. **Faça perguntas clarificadoras estratégicas**
+4. **Gere PRD apenas após ter informações suficientes**
+5. **Oriente sobre próximos passos** (review, validação, geração de tasks)
+6. **Sugira uso de `@generate-tasks-from-prd.mdc`** após aprovação do PRD
+
+
+
