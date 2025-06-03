@@ -1,0 +1,32 @@
+{
+  "name": "website-ricardo-mendes",
+  "version": "1.0.0",
+  "description": "Website Ricardo Mendes Portfolio - Head de Produtos",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "^15.3.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "lucide-react": "^0.468.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@types/react": "^18.3.17",
+    "@types/react-dom": "^18.3.5",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "^15.3.3",
+    "postcss": "^8.5.1",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.2"
+  },
+  "keywords": ["portfolio", "head-produtos", "pagamentos-recorrentes", "next.js"],
+  "author": "Ricardo Mendes",
+  "license": "MIT"
+}
