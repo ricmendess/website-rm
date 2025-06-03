@@ -10,17 +10,17 @@ Baseado no PRD: `prd-website-pessoal-ricardo-mendes.md`
 - `postcss.config.js` - ✅ Configuração do PostCSS para Tailwind CSS
 - `env.config.js` - ✅ Configuração centralizada de variáveis de ambiente
 - `src/app/layout.tsx` - ✅ Layout principal com meta tags SEO básicas
-- `src/app/page.tsx` - ✅ Página principal temporária para teste
+- `src/app/page.tsx` - ✅ Página principal com Hero e About
 - `src/app/globals.css` - ✅ Estilos globais e configuração do Tailwind
 - `src/lib/types.ts` - ✅ Interfaces TypeScript para dados do portfolio
 - `src/components/Header.tsx` - ✅ Componente de cabeçalho com navegação e link LinkedIn
-- `src/components/Hero.tsx` - Seção hero com apresentação principal
-- `src/components/About.tsx` - Seção sobre com resumo da experiência
+- `src/components/Footer.tsx` - ✅ Rodapé com links para redes sociais profissionais
+- `src/components/Hero.tsx` - ✅ Seção hero com apresentação principal
+- `src/components/About.tsx` - ✅ Seção sobre com resumo da experiência e competências
 - `src/components/Cases.tsx` - Seção de cases com projetos principais
 - `src/components/PaymentsExpertise.tsx` - Seção específica sobre pagamentos recorrentes
 - `src/components/Skills.tsx` - Seção com tecnologias e metodologias
 - `src/components/Contact.tsx` - Formulário de contato
-- `src/components/Footer.tsx` - ✅ Rodapé com links para redes sociais profissionais
 - `src/lib/analytics.ts` - Configuração do Google Analytics 4
 - `src/styles/globals.css` - Estilos globais e configuração do Tailwind
 - `public/cv-ricardo-mendes.pdf` - CV em PDF para download
@@ -54,8 +54,8 @@ Baseado no PRD: `prd-website-pessoal-ricardo-mendes.md`
   - [x] 2.6 Implementar navegação responsiva com menu mobile (hamburger)
 
 - [ ] 3.0 Implementação das Seções de Conteúdo
-  - [ ] 3.1 Criar `src/components/Hero.tsx` com nome, cargo atual e resumo executivo em 2 linhas
-  - [ ] 3.2 Criar `src/components/About.tsx` com resumo da experiência de 10+ anos em produtos
+  - [x] 3.1 Criar `src/components/Hero.tsx` com nome, cargo atual e resumo executivo em 2 linhas
+  - [x] 3.2 Criar `src/components/About.tsx` com resumo da experiência de 10+ anos em produtos
   - [ ] 3.3 Criar `src/components/Cases.tsx` com 2-3 projetos principais (contexto, desafio, solução, resultados)
   - [ ] 3.4 Criar `src/components/PaymentsExpertise.tsx` destacando especialização em pagamentos recorrentes
   - [ ] 3.5 Criar `src/components/Skills.tsx` com tecnologias e metodologias dominadas
