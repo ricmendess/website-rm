@@ -1,5 +1,5 @@
 import React from 'react'
-import { Users, Target, TrendingUp, Award, Building, Calendar } from 'lucide-react'
+import { Users, Target, TrendingUp, Award, Building, Calendar, Download } from 'lucide-react'
 import { PERSONAL_DATA } from '../lib/types'
 
 const About = () => {
@@ -155,7 +155,7 @@ const About = () => {
         </div>
 
         {/* Timeline de experiência */}
-        <div>
+        <div className="mb-16">
           <h3 className="text-2xl font-bold text-gray-900 text-center mb-12">
             Trajetória Profissional
           </h3>
@@ -177,6 +177,30 @@ const About = () => {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+
+        {/* Download CV */}
+        <div className="text-center">
+          <div className="bg-gradient-to-r from-primary-50 to-blue-50 p-8 rounded-lg border border-primary-100">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              Quer saber mais detalhes?
+            </h3>
+            <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+              Baixe meu CV completo com detalhes da experiência profissional, 
+              projetos realizados e principais conquistas ao longo da carreira.
+            </p>
+            <a
+              href="/cv-ricardo-mendes.pdf"
+              download="CV-Ricardo-Mendes-Head-de-Produtos.pdf"
+              className="btn-primary inline-flex items-center hover:scale-105 shadow-medium"
+            >
+              <Download className="w-5 h-5 mr-2" />
+              Download CV (PDF)
+            </a>
+            <p className="text-sm text-gray-500 mt-4">
+              Arquivo PDF • Atualizado em dezembro de 2024
+            </p>
           </div>
         </div>
       </div>

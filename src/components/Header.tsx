@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import { Menu, X, Linkedin, ExternalLink } from 'lucide-react'
 import { PERSONAL_DATA } from '../lib/types'
-import config from '../../env.config'
+import { siteConfig } from '../lib/config'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -77,7 +77,7 @@ const Header = () => {
           {/* LinkedIn Button - Desktop */}
           <div className="hidden md:flex items-center space-x-4">
             <a
-              href={config.linkedinUrl}
+              href={siteConfig.linkedinUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center px-4 py-2 bg-accent-linkedin text-white font-medium rounded-lg hover:bg-accent-linkedin/90 transition-all duration-200 hover:scale-105 shadow-medium"
@@ -121,7 +121,7 @@ const Header = () => {
               {/* LinkedIn Button - Mobile */}
               <div className="pt-2 border-t border-gray-100">
                 <a
-                  href={config.linkedinUrl}
+                  href={siteConfig.linkedinUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center w-full px-3 py-2 bg-accent-linkedin text-white font-medium rounded-lg hover:bg-accent-linkedin/90 transition-colors"

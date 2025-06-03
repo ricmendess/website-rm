@@ -2,7 +2,7 @@ import React from 'react'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import config from '../../env.config'
+import { siteConfig } from '../lib/config'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -36,17 +36,17 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL(config.siteUrl),
+  metadataBase: new URL(siteConfig.siteUrl),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     type: 'website',
     locale: 'pt_BR',
-    url: config.siteUrl,
+    url: siteConfig.siteUrl,
     title: 'Ricardo Mendes - Head de Produtos | Especialista em Pagamentos Recorrentes',
     description: 'Head de Produtos na Bemobi com mais de 10 anos de experiência liderando equipes de produtos. Especialista em implementação de pagamentos recorrentes.',
-    siteName: config.siteName,
+    siteName: siteConfig.siteName,
     images: [
       {
         url: '/og-image.jpg',
@@ -114,9 +114,9 @@ export default function RootLayout({
                 "@type": "Organization",
                 "name": "Bemobi"
               },
-              "url": config.siteUrl,
+              "url": siteConfig.siteUrl,
               "sameAs": [
-                config.linkedinUrl
+                siteConfig.linkedinUrl
               ],
               "knowsAbout": [
                 "Product Management",

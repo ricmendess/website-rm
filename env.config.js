@@ -20,7 +20,7 @@ const config = {
   isProduction: process.env.NODE_ENV === 'production',
 };
 
-export default config;
+module.exports = config;
 
 // Instruções para configuração:
 // 1. Crie um arquivo .env.local na raiz do projeto

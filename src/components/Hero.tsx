@@ -1,7 +1,7 @@
 import React from 'react'
 import { ArrowDown, Download, Linkedin, ExternalLink } from 'lucide-react'
 import { PERSONAL_DATA } from '../lib/types'
-import config from '../../env.config'
+import { siteConfig } from '../lib/config'
 
 const Hero = () => {
   // Função para scroll suave para próxima seção
@@ -49,7 +49,7 @@ const Hero = () => {
           {/* Call-to-actions */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 animate-slide-up animate-delay-400">
             <a
-              href={config.linkedinUrl}
+              href={siteConfig.linkedinUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-linkedin hover:scale-105 shadow-medium"
